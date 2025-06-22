@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ことばあそび - さかさことば</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>さかさことば</h1>
+            <p class="instructions">イラストのなまえをさかさまにしたらどうなるかな？</p>
+            <div class="score">せいかい: <span id="score">0</span>/10</div>
+        </header>
+        
+        <main>
+            <div id="gameArea">
+                <div id="card" class="card">
+                    <div id="imageContainer">
+                        <img id="wordImage" src="" alt="">
+                    </div>
+                </div>
+                
+                <div id="inputArea">
+                    <div id="keyboardInput" class="input-mode">
+                        <input type="text" id="textInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                        <div id="feedback" class="feedback"></div>
+
+                    </div>
+                </div>
+                
+                <button id="skipBtn" class="skip-btn">スキップ</button>
+            </div>
+            
+            <div id="resultScreen" class="hidden">
+                <h2>おわり！</h2>
+                <div class="final-score">せいかい: <span id="finalScore">0</span>/10</div>
+                <div class="time-taken">かかったじかん: <span id="timeTaken">0</span>びょう</div>
+                <div id="scoreBreakdownContainer">
+                    <h3>せいせき</h3>
+                    <div id="scoreBreakdown"></div>
+                </div>
+                <p id="encouragement"></p>
+                <button id="playAgainBtn">もういちど あそぶ</button>
+            </div>
+        </main>
+    </div>
+    
+    <audio id="correctSound" src="https://assets.mixkit.co/active_storage/sfx/2577/2577-preview.mp3"></audio>
+    <audio id="wrongSound" src="https://assets.mixkit.co/active_storage/sfx/2598/2598-preview.mp3"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>

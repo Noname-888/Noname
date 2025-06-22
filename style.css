@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rounded Mplus 1c', 'Hiragino Maru Gothic ProN', 'Yu Gothic', sans-serif;
+}
+
+body {
+    background-color: #f0f7ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #4a6fa5;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.instructions {
+    font-size: 1.2rem;
+    color: #4a6fa5;
+    margin-bottom: 15px;
+}
+
+.score {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #4a6fa5;
+    font-weight: bold;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.card.bounce {
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+#imageContainer {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9ff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#wordImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Word display removed as per user request */
+
+.input-mode {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Microphone button and status removed as per user request */
+
+#textInput {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    font-size: 2rem;
+    text-align: center;
+    border: 2px solid #cbd5e0;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    background-color: white;
+    display: block;
+}
+
+/* Feedback styles */
+.feedback {
+    font-size: 4rem;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.feedback.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.feedback.correct {
+    color: #48bb78; /* Green for correct */
+}
+
+.feedback.incorrect {
+    color: #f56565; /* Red for incorrect */
+}
+
+
+
+.skip-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid #4a6fa5;
+    color: #4a6fa5;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.skip-btn:active {
+    background-color: #e0e9ff;
+}
+
+#resultScreen {
+    text-align: center;
+    padding: 30px;
+}
+
+.final-score {
+    font-size: 2.5rem;
+    color: #4a6fa5;
+    margin: 20px 0;
+}
+
+.time-taken {
+    font-size: 1.5rem;
+    color: #4a6fa5;
+    margin-bottom: 20px;
+}
+
+#scoreBreakdownContainer {
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #e0e9ff;
+    border-radius: 15px;
+    max-width: 400px;
+}
+
+#scoreBreakdownContainer h3 {
+    font-size: 1.5rem;
+    color: #3a5a80;
+    margin-bottom: 15px;
+}
+
+#scoreBreakdown {
+    font-size: 1.2rem;
+    color: #3a5a80;
+}
+
+.breakdown-row {
+    margin-bottom: 8px;
+}
+
+#encouragement {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #4a6fa5;
+}
+
+#playAgainBtn {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#playAgainBtn:active {
+    transform: scale(0.95);
+    background-color: #3a5a80;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    /* Word display removed as per user request */
+    
+    #imageContainer {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .keyboard {
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 100%;
+    }
+    
+    .keyboard button {
+        font-size: 1.2rem;
+    }
+}
